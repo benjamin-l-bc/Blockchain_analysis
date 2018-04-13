@@ -12,6 +12,7 @@ import json
 import pandas as pd
 import pyodbc
 con=pyodbc.connect('DRIVER={SQL Server};SERVER=Server;DATABASE=DB;UID=ID;PWD=pwd')
+#input the server,DB,ID and password to login
 
 def getblockinfo(a,b):
 #input the data from which block range you want to collect.
