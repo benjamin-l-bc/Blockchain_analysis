@@ -52,3 +52,7 @@ def getblockinfo(a,b):
                 cursor.execute("insert into dbo.blockchain_tx values({0},{1},'{2}',{3})".format(height,block_time,to_address,value)) 
                 cursor.commit()
                 cursor.close()
+				
+def address_analyze():
+    info=pd.read_sql('select address,sum(value) as value from blockchain_tx group by address order by sum(value)',con)
+    plt.hist(info['value'])
