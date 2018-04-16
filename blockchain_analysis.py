@@ -54,5 +54,6 @@ def getblockinfo(a,b):
                 cursor.close()
 				
 def address_analyze():
+#analyze the address income and outcomes
     info=pd.read_sql('select address,sum(value) as value from blockchain_tx group by address order by sum(value)',con)
     plt.hist(info['value'])
